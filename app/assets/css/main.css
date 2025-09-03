@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Manrope", "Open Sans", ui-sans-serif, system-ui, sans-serif;
+}

@@ -1,0 +1,35 @@
+/* assets/css/tailwind.css */
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 transition;
+  }
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.bg-noise {
+  background-image: radial-gradient(
+      ellipse at 20% 10%,
+      rgba(99, 102, 241, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 80% 30%,
+      rgba(20, 184, 166, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(244, 63, 94, 0.18),
+      transparent 40%
+    );
+}
