@@ -3,8 +3,8 @@ import { ref, computed } from "vue";
 import InteractiveCard from "~/components/InteractiveCard.vue";
 import ExperienceRocket from "~/components/ExperienceRocket.vue";
 import { useSectionDim } from "~/composables/useSectionDim.client";
-import AbmcoLogo from "~/assets/images/abmco.png";
-import CmiLogo from "~/assets/images/cmilogo.png";
+import AbmcoLogo from "/images/abmco.png";
+import CmiLogo from "/images/cmilogo.png";
 
 const { rootRef, isDimmed } = useSectionDim(0.6);
 const isRocketHover = ref(false);

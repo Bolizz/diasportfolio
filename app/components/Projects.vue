@@ -3,10 +3,10 @@ import { computed } from "vue";
 import InteractiveCard from "~/components/InteractiveCard.vue";
 import { useSectionDim } from "~/composables/useSectionDim.client";
 
-import EdifyImg from "~/assets/images/edify.jpeg";
-import JaqynImg from "~/assets/images/jaqyn.png";
-import LmsImg from "~/assets/images/lms.png";
-import ShaqyrtuImg from "~/assets/images/shaqyrtu.png";
+import EdifyImg from "/images/edify.jpeg";
+import JaqynImg from "/images/jaqyn.png";
+import LmsImg from "/images/lms.png";
+import ShaqyrtuImg from "/images/shaqyrtu.png";
 
 const { rootRef, isDimmed } = useSectionDim(0.6);
 const dimClass = computed(() =>

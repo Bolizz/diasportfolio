@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import GmailIcon from "~/assets/images/gmail.svg";
-import LinkedinIcon from "~/assets/images/linkedin.svg";
-import TelegramIcon from "~/assets/images/telegram.svg";
+import GmailIcon from "/images/gmail.svg";
+import LinkedinIcon from "/images/linkedin.svg";
+import TelegramIcon from "/images/telegram.svg";
 
 const props = withDefaults(
   defineProps<{

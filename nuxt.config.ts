@@ -48,4 +48,5 @@ export default defineNuxtConfig({
     families: { Manrope: [400, 500, 600, 700, 800] },
     display: "swap",
   },
+  nitro: { preset: "vercel" },
 });
