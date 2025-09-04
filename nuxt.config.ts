@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: "Bolsyn Zhengis — Portfolio",
+      title: "Bolsyn.dev",
       meta: [
         {
           name: "Personal Portfolio",
