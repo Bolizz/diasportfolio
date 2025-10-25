@@ -13,7 +13,7 @@
         class="icon-size transition-transform duration-200 group-hover:scale-105"
       />
     </div>
-    <p class="mt-2 text-center text-slate-200 text-sm font-medium">
+    <p class="mt-2 text-center text-gray-900 text-sm font-medium">
       {{ label }}
     </p>
   </a>

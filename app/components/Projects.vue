@@ -3,11 +3,6 @@ import { computed } from "vue";
 import InteractiveCard from "~/components/InteractiveCard.vue";
 import { useSectionDim } from "~/composables/useSectionDim.client";
 
-import EdifyImg from "/images/edify.jpeg";
-import JaqynImg from "/images/jaqyn.png";
-import LmsImg from "/images/lms.png";
-import ShaqyrtuImg from "/images/shaqyrtu.png";
-
 const { rootRef, isDimmed } = useSectionDim(0.6);
 const dimClass = computed(() =>
   isDimmed.value ? "opacity-85" : "opacity-100"
@@ -21,187 +16,78 @@ const dimClass = computed(() =>
     :class="dimClass"
     class="container mx-auto px-6 py-24 transition-opacity duration-300"
   >
-    <h2 class="text-3xl md:text-4xl font-semibold mb-10">💼 Projects</h2>
+    <h2 class="text-3xl text-gray-900 md:text-4xl font-semibold mb-10">
+      💼 Projects
+    </h2>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Edify CRM -->
+    <div class="grid md:grid-cols-2 gap-8 text-gray-900">
+      <!-- In-Pipe Robot -->
       <InteractiveCard
-        title="Edify CRM — Calendar, Users & JWT Auth"
-        subtitle="Week/Month calendar, protected API, dashboard widgets"
-        :tags="['Vue 3', 'Pinia', 'Axios', 'Tailwind', 'JWT', 'REST']"
-        :image="EdifyImg"
+        title="Hybrid In-Pipe Inspection Robot"
+        subtitle="Chassis actuation, teleop, motion capture"
+        :tags="['Mechanical', 'Teleoperation', 'Perception']"
       >
         <template #summary>
-          Week/Month calendar with modal create, JWT-secured API calls,
-          dashboard + chat.
+          Lab-built in-pipe robot for smart inspection and maintenance in
+          constrained environments.
         </template>
-
-        Implemented <code>weekStart/weekEnd</code> and
-        <code>startDay/endDay</code> date math for weekly/monthly views. Modal
-        event creation via <code>CalendarModal</code>; Pinia stores for
-        events/users with Axios interceptors and JWT persisted in
-        <code>sessionStorage</code>. Dashboard KPIs + chat list driven by store
-        state.
-
-        <ul class="mt-3 list-disc pl-5 text-sm opacity-90">
-          <li>
-            Fixed timezone drift by trimming ISO ranges before server queries.
-          </li>
-          <li>Centralized auth header injection to keep components minimal.</li>
-          <li>
-            Scoped reactivity to avoid grid over-renders on date navigation.
-          </li>
-        </ul>
+        Designed chassis & actuation; integrated ESP32-based teleop (433MHz
+        RF/nRF24L01); logged motion with OptiTrack; contributed to AI-assisted
+        defect detection pipeline.
       </InteractiveCard>
 
-      <!-- Shaqyrtu -->
+      <!-- Continuum Manipulator -->
       <InteractiveCard
-        title="Shaqyrtu — Digital Invitation Builder"
-        subtitle="Interactive templates, media upload, maps & countdown"
-        :tags="['Nuxt 3', 'Pinia', 'Nuxt UI', 'Vee-Validate', 'VCalendar']"
-        :image="ShaqyrtuImg"
+        title="Continuum Manipulator (Cable-Driven)"
+        subtitle="Soft robotics | tensegrity-inspired"
+        :tags="['CAD', 'Additive Manufacturing', 'Soft Robotics']"
       >
         <template #summary>
-          14+ reusable templates: photos, audio, 2GIS/Yandex maps, RSVP form,
-          countdown.
+          Sub-segment design & fabrication of a cable-driven manipulator for
+          compliant manipulation.
         </template>
-
-        Dynamic template switcher renders layouts from backend JSON. Media
-        uploader with preview/remove; audio selector with autoplay guard. Map
-        embeds and animated countdown timer; RSVP validated with
-        Yup/Vee-Validate.
-
-        <ul class="mt-3 list-disc pl-5 text-sm opacity-90">
-          <li>
-            Abstracted template assets (SVG/video/img) via computed decorators.
-          </li>
-          <li>
-            Preloader + conditional rendering for paid/unpaid invite states.
-          </li>
-          <li>
-            Share flow using <code>navigator.share</code> with clipboard
-            fallback.
-          </li>
-        </ul>
+        Iterated from tensegrity concept to PLA/TPU printed components; studied
+        stability and controllability; preparing for integrated actuation and
+        sensing.
       </InteractiveCard>
 
-      <!-- Jaqyn -->
+      <!-- Gesture Keyboard -->
       <InteractiveCard
-        title="Jaqyn — Specialists, Seminars & Profile"
-        subtitle="Protected routes, rich filtering, sessions, payments"
-        :tags="[
-          'Nuxt 3',
-          'Pinia',
-          'TypeScript',
-          'VueUse/Composables',
-          'ofetch',
-          'i18n',
-        ]"
-        :image="JaqynImg"
+        title="Virtual Keyboard via Hand Gestures"
+        subtitle="OpenCV + Python"
+        :tags="['Computer Vision', 'HCI']"
       >
         <template #summary>
-          Full Nuxt app: auth-gated layouts, specialists & seminars with deep
-          filters, profiles, favorites, sessions, and payments.
+          Real-time hand tracking to type without a physical keyboard.
         </template>
-
-        <!-- Core highlights (technical, FE-focused) -->
-        <ul class="mt-2 list-disc pl-5 text-sm space-y-1 opacity-90">
-          <!-- Architecture & Auth -->
-          <li>
-            Role-aware navigation via <code>defineNuxtRouteMiddleware</code>,
-            cookie-based token check, SSR/client hydration guards, auth modal
-            fallback.
-          </li>
-          <li>
-            App-wide <code>$fetch.create</code> plugin: JWT header injection,
-            <code>locale</code> header, 401 interceptor →
-            <code>navigateTo</code>, error surface.
-          </li>
-
-          <!-- Data & State -->
-          <li>
-            Typed stores (Pinia) for filters, user, sessions; normalized lists;
-            cache + invalidation keyed by filter params.
-          </li>
-          <li>
-            Reusable <code>useAPI&lt;T&gt;</code> composable wrapping
-            <code>useFetch</code> with the custom <code>$api</code>, lazy &
-            watched queries, SSR-safe.
-          </li>
-
-          <!-- Specialists -->
-          <li>
-            Specialists index: left rail filter (tags, city, language,
-            specialization) + top filter; skeleton loaders; paginated results
-            with <code>UPagination</code>.
-          </li>
-          <li>
-            Specialist details: modal booking, reviews CRUD, education gallery
-            (image modal), optimistic “favorite” toggle using a composable.
-          </li>
-
-          <!-- Seminars -->
-          <li>
-            Seminars list with city filter; seminar page supports paid/unpaid
-            flows; status & seat availability driven from store.
-          </li>
-          <li>
-            Video/preview rendering with graceful fallbacks; i18n strings
-            throughout.
-          </li>
-
-          <!-- Profile -->
-          <li>
-            Profile layout with sticky nav: Settings, Sessions (pay/edit
-            review), Favorites; masked inputs; form validation (Vee-Validate +
-            Yup).
-          </li>
-          <li>
-            Payment CTA & session state machine: online/offline meeting
-            shortcuts, WhatsApp deep links, review modals.
-          </li>
-
-          <!-- UI/UX & Performance -->
-          <li>
-            Suspense boundaries, skeletons, and optimistic updates for perceived
-            speed; scroll-to-top on filter change.
-          </li>
-          <li>
-            Component library integration (<code>U*</code> components),
-            accessibility-minded forms, keyboardable controls.
-          </li>
-
-          <!-- Dev Experience -->
-          <li>
-            Strict TS props/types for API entities, clean composables, and
-            isolation of services (users, specialists, transactions).
-          </li>
-        </ul>
+        Implemented gesture detection and debounced keystroke mapping; tuned
+        robustness across lighting conditions.
       </InteractiveCard>
 
-      <!-- LMS -->
+      <!-- Gesture-Controlled LEDs -->
       <InteractiveCard
-        title="LMS — Meal Plans & Personal Pages"
-        subtitle="Weekly/monthly plans, news feed, teacher/parent/student roles"
-        :tags="['Nuxt 3', 'Pinia', 'Tailwind', 'API Integration']"
-        :image="LmsImg"
+        title="Gesture-Controlled LED Switching"
+        subtitle="OpenCV + Embedded"
+        :tags="['CV', 'Embedded', 'IoT']"
       >
         <template #summary>
-          Backend-fetched plans + news rendered through role-based components.
+          Simple HCI pipeline controlling LED on/off via tracked gestures.
         </template>
+        Bridged CV outputs to microcontroller I/O; demonstrated end-to-end
+        latency-aware loop for real-time control.
+      </InteractiveCard>
 
-        Meal plan module renders week/month; news module reuses the same
-        structure. Teachers: CRUD students + upload plans. Parents/Students:
-        read-only access. Middleware enforces permissions and keeps layouts
-        clean.
-
-        <ul class="mt-3 list-disc pl-5 text-sm opacity-90">
-          <li>Encapsulated day/week views into reusable components.</li>
-          <li>Separated permissions into middleware (not components).</li>
-          <li>
-            Store hydration syncs API data across plans, news, personal pages.
-          </li>
-        </ul>
+      <!-- HoloLens Color Correction -->
+      <InteractiveCard
+        title="Real-Time Color Correction for Color-Blind Users"
+        subtitle="Microsoft HoloLens (Gen 1) · C#"
+        :tags="['Mixed Reality', 'Signal Processing', 'Accessibility']"
+      >
+        <template #summary>
+          LMS-space adaptive filtering for improved color discrimination.
+        </template>
+        Implemented pipeline on HoloLens Gen 1; tested interactive tuning to
+        personalize corrections for daltonian users.
       </InteractiveCard>
     </div>
   </section>

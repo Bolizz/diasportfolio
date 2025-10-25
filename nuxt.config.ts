@@ -6,12 +6,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: "bolsyn.dev",
+      title: "dias.akimbay",
       meta: [
         {
           name: "Personal Portfolio",
-          content:
-            "Frontend Developer Portfolio — Nuxt, Vue, Tailwind, GSAP, 3D.",
+          content: "Dias Akimbay's personal portfolio",
         },
         { name: "msapplication-TileColor", content: "#ffffff" },
         { name: "theme-color", content: "#ffffff" },

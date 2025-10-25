@@ -21,7 +21,7 @@
           <h3 class="text-lg font-semibold leading-tight">
             {{ title }}
           </h3>
-          <p v-if="subtitle" class="mt-1 text-sm text-slate-300/80">
+          <p v-if="subtitle" class="mt-1 text-sm text-gray-900">
             {{ subtitle }}
           </p>
         </div>
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <p v-if="$slots.summary" class="mt-3 text-slate-300/90">
+      <p v-if="$slots.summary" class="mt-3 text-gray-900">
         <slot name="summary" />
       </p>
 
@@ -40,7 +40,7 @@
         <span
           v-for="t in tags"
           :key="t"
-          class="rounded-md bg-white/10 px-2.5 py-1 text-xs text-slate-200"
+          class="rounded-md bg-white/10 px-2.5 py-1 text-xs text-gray-900"
         >
           {{ t }}
         </span>
@@ -56,7 +56,7 @@
     >
       <div v-show="expanded" ref="bodyRef" class="px-6 pb-6 overflow-hidden">
         <div
-          class="mt-2 border-t border-white/10 pt-4 text-slate-200/95 leading-relaxed"
+          class="mt-2 border-t border-white/10 pt-4 text-gray-900 leading-relaxed"
         >
           <slot />
         </div>
