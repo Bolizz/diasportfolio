@@ -10,8 +10,7 @@
         <div>
           <div class="relative inline-block">
             <img
-              src="/images/dias.jpg"
-              alt="Photo of Dias Akimbay"
+              src="public/images/dias.jpg"
               class="h-28 w-28 md:h-32 md:w-32 rounded-full ring-8 ring-white shadow-md object-cover object-top"
             />
           </div>
