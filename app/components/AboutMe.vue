@@ -10,7 +10,7 @@
         <div>
           <div class="relative inline-block">
             <img
-              src="public/images/dias.jpg"
+              src="/images/dias.JPG"
               class="h-28 w-28 md:h-32 md:w-32 rounded-full ring-8 ring-white shadow-md object-cover object-top"
             />
           </div>
